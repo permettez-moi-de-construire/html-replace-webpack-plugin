@@ -63,8 +63,9 @@ module.exports = {
       },
       {
         pattern: /(<!--\s*|@@)(css|js|img):([\w-\/]+)(\s*-->)?/g,
-        replacement: function(match, $1, type, file, $4, index, input) {
+        replacement: function(compilation, match, $1, type, file, $4, index, input) {
           // those formal parameters could be:
+          // compilation: see https://webpack.js.org/api/compilation-object/
           // match: <-- css:bootstrap-->
           // type: css
           // file: bootstrap
